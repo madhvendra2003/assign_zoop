@@ -59,7 +59,11 @@ if up_file is not None :
 
         with st.chat_message("assistant"):  
             response = llm.invoke(messages)
-            st.markdown(response.content) 
+            if isinstance(response.content, list):
+                    final_answer = response.content[0].get("text", "")
+            else:
+                    final_answer = response.content
+            st.markdown(final_answer)
         
         st.session_state.chat_history.append((question, response.content))
         st.write(f"**Answer:** {response.content}")
