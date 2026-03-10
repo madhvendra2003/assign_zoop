@@ -66,7 +66,7 @@ if up_file is not None :
             st.markdown(final_answer)
         
         st.session_state.chat_history.append((question, response.content))
-        st.write(f"**Answer:** {response.content}")
+        
 
 
 
