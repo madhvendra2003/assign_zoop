@@ -2,8 +2,7 @@ import streamlit as st
 import os
 from PyPDF2 import PdfReader
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain.schema import HumanMessage, SystemMessage, AIMessage
-
+from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 
 os.environ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_API_KEY"]
 def load_pdf(file):
