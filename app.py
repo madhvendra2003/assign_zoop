@@ -65,7 +65,7 @@ if up_file is not None :
                     final_answer = response.content
             st.markdown(final_answer)
         
-        st.session_state.chat_history.append((question, response.content))
+        st.session_state.chat_history.append((question, final_answer))
         
 
 
